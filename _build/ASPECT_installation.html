@@ -1,0 +1,270 @@
+---
+redirect_from:
+  - "aspect-installation"
+interact_link: content/ASPECT_installation.ipynb
+kernel_name: python3
+kernel_path: content
+has_widgets: false
+title: |-
+  ASPECT installation on Hamilton§
+pagenum: 1
+prev_page:
+  url: /Starting_with_ASPECT.html
+next_page:
+  url: /Hamilton_from_own_computer.html
+suffix: .ipynb
+search: installation aspect terminal hamilton using machine run jeroen van hunen linux should need command disk version community dur ac uk open os mira done black windows where username cis local following modules last check space allowance typically folder created debug release du png already existing deal ii march text clicking screen top task bar own opening might slightly different mac click launchpad rocket symbol best xgo software information found here hamiltonfromowncomputer html logging onto replaced provide password note x option allow remote e either logged into hpc cluster settings loaded properly still available variables set again checked cshell bash downloading
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">ASPECT installation on Hamilton§</div>
+</div>
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/DU.png" alt=""></p>
+<h1 id="ASPECT-installation-on-an-already-existing-deal.ii-installation">ASPECT installation on an already existing deal.ii installation<a class="anchor-link" href="#ASPECT-installation-on-an-already-existing-deal.ii-installation"> </a></h1><p><strong>Jeroen van Hunen, March 2020 </strong></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Open-a-text-'terminal'">Open a text 'terminal'<a class="anchor-link" href="#Open-a-text-'terminal'"> </a></h2><ul>
+<li>Linux OS: On <code>mira</code>, this can be done by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine, opening a terminal might be done in a slightly different way. </li>
+<li>With Mac OS, click the 'Launchpad' (black rocket symbol), then 'Other', then 'Terminal'</li>
+<li>Using Windows, the best way is to use the <code>X2Go</code> software, and more information on this can be found <a href="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/Hamilton_from_own_computer.html">here</a>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Logging-onto-Hamilton">Logging onto Hamilton<a class="anchor-link" href="#Logging-onto-Hamilton"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="o">^</span><span class="n">username</span><span class="o">^</span><span class="nd">@hamilton</span><span class="o">.</span><span class="n">dur</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(where <code>^username^</code> should be replaced with your CIS username), and provide your CIS password. (Note that the <code>-X</code> option will allow the remote machine (i.e. Hamilton) to open windows on the machine that the terminal is run from (either <code>mira</code> or your local linux machine)). You should now be logged into the Hamilton HPC cluster.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Settings">Settings<a class="anchor-link" href="#Settings"> </a></h2><p>The following modules need to be loaded for the installation to run properly. Last check that all modules were still available was on 11-1-2020.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">module</span><span class="o">-</span><span class="n">git</span> <span class="n">gcc</span><span class="o">/</span><span class="mf">4.9</span><span class="o">.</span><span class="mi">1</span> <span class="n">cmake</span><span class="o">/</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">2</span> <span class="n">lapack</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="mf">3.5</span><span class="o">.</span><span class="mi">0</span> <span class="n">zlib</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">7</span> <span class="n">sge</span><span class="o">/</span><span class="n">current</span> <span class="n">openmpi</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">1</span> <span class="n">gsl</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="mi">64</span><span class="o">/</span><span class="mf">1.15</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The following variables need to be set (again, last checked on 11-1-2020). For the Cshell:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">setenv</span> <span class="n">CC</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cluster</span><span class="o">-</span><span class="n">Apps</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mf">4.9</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mpicc</span>
+<span class="n">setenv</span> <span class="n">CXX</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cluster</span><span class="o">-</span><span class="n">Apps</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mf">4.9</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mpicxx</span>
+<span class="n">setenv</span> <span class="n">FC</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cluster</span><span class="o">-</span><span class="n">Apps</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mf">4.9</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mpif90</span>
+<span class="n">setenv</span> <span class="n">FF</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cluster</span><span class="o">-</span><span class="n">Apps</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mf">4.9</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mpif77</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For bash:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">export</span> <span class="n">CC</span><span class="o">=</span><span class="n">mpicc</span><span class="p">;</span> <span class="n">export</span> <span class="n">CXX</span><span class="o">=</span><span class="n">mpicxx</span><span class="p">;</span> <span class="n">export</span> <span class="n">FC</span><span class="o">=</span><span class="n">mpif90</span><span class="p">;</span> <span class="n">export</span> <span class="n">FF</span><span class="o">=</span><span class="n">mpif77</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Downloading-ASPECT">Downloading ASPECT<a class="anchor-link" href="#Downloading-ASPECT"> </a></h2><p>Using the <code>quota</code> command on Hamilton, you can check your disk space allowance. Typically, you have an allowance on the <code>home</code> disk and the <code>data</code> disk, with the latter having significantly more space, so this is where we will install Hamilton:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^/</span>
+<span class="n">mkdir</span> <span class="n">ASPECT</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">geodynamics</span><span class="o">/</span><span class="n">aspect</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will create a local <code>aspect</code> folder. Enter the folder, prepare the installation and run the installation:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="n">aspect</span>
+<span class="n">cmake</span> <span class="o">-</span><span class="n">DDEAL_II_DIR</span><span class="o">=/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dgl6jv1</span><span class="o">/</span><span class="n">Progs</span><span class="o">/</span><span class="n">ASPECT_20181001</span><span class="o">/</span><span class="n">deal</span><span class="o">.</span><span class="n">ii</span><span class="o">-</span><span class="n">candi</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">deal</span><span class="o">.</span><span class="n">II</span><span class="o">-</span><span class="n">v9</span><span class="o">.</span><span class="mf">0.0</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">release</span> <span class="o">.</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j12</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Don't forget the <code>.</code> at the end of the <code>cmake</code> command. The <code>make</code> command will run the installation in parallel on 12 cores to speed up the installation. Typically this should take around 10 minutes or so. If all oes well, an executable file <code>aspect</code> will be created. This is a comilation in the 'debug' mode, which produces a lot of output, and is therefore using for experimenting with the code. But for a (significant) speedup, a 'release' version will need to be created. So if you prefer to keep the 'debug' version, rename it, and then comile the 'release' version:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">make</span> <span class="n">release</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j12</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

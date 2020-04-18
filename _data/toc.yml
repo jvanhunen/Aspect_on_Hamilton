@@ -22,38 +22,12 @@
 # See the links below for an example.
 
 # Top-level page
-- title: Home
-  url: /intro
+- title: Starting with ASPECT
+  url: Starting_with_ASPECT
   not_numbered: true
-
-# External link
-- title: GitHub repository
-  url: https://github.com/jupyter/jupyter-book
-  external: true
+- title: ASPECT installation on Hamilton§
+  url: ASPECT_installation
   not_numbered: true
-
-# Adds a searchbar link
-- title: Search
-  search: true
-
-# Divider for meta-pages and content page
-- divider: true
-
-# Add a header and sample content section
-- header: Demo textbook
-
-# A chapter w/ a collection of sections beneath it
-- title: Features and customization
-  url: /features/features
+- title: Accessing Hamilton from your own computer
+  url: Hamilton_from_own_computer
   not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Markdown files
-    url: /features/markdown
-    not_numbered: true
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    not_numbered: true
-  - title: Starting with ASPECT
-    url: /features/Starting_with_ASPECT
-    not_numbered: true

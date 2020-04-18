@@ -1,0 +1,142 @@
+---
+redirect_from:
+  - "hamilton-from-own-computer"
+interact_link: content/Hamilton_from_own_computer.ipynb
+kernel_name: python3
+kernel_path: content
+has_widgets: false
+title: |-
+  Accessing Hamilton from your own computer
+pagenum: 2
+prev_page:
+  url: /ASPECT_installation.html
+next_page:
+  url: 
+suffix: .ipynb
+search: xgo hamilton machine window linux should software click session windows open mira terminal under client using mac into option run download new installation left allow grey local postprocessing type system start probably choose enter cis logging own log onto either calculations wiki org doesnt box preferences button bottom host username dur ac uk jeroen van hunen computer hpc cluster campus not results computers package operating any b through remote e provide install header wizard called different x file downloaded applications running top able following light area password key done community aspect du png phil heron october page explains pc laptop
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Accessing Hamilton from your own computer</div>
+</div>
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/DU.png" alt=""></p>
+<h1 id="Logging-on-and-using-Hamilton-from-your-own-computer">Logging on and using Hamilton from your own computer<a class="anchor-link" href="#Logging-on-and-using-Hamilton-from-your-own-computer"> </a></h1><p><strong>Jeroen van Hunen and Phil Heron, October 2019</strong></p>
+<p>This page explains how to log onto and use the Hamilton HPC cluster using your own Windows, Mac, or Linux PC or laptop, whether you are on the campus or not. There are generally two ways to use your local machine:</p>
+<ol>
+<li>Either all the action (calculations and postprocessing) takes place remotely on Hamilton. In that case, your local machine should have some software to create a 'window into Hamilton' to type in commands for Hamilton, and to view results from postprocessing software that runs on Hamilton. <ul>
+<li>a. For Windows and Mac computers, the software package <a href="https://wiki.x2go.org">X2Go</a> can be used to log into the University's linux system <code>mira</code>. For Linux operating systems, this option is trivial, and doesn't require any additional software.</li>
+<li>b. Once you are using a linux system (either through X2Go on <code>mira</code> or directly from a Linux machine), you can then log on to Hamilton.</li>
+</ul>
+</li>
+<li>Or you use a simple <em>terminal</em> to run calculations on Hamilton, and then download results from Hamilton to your local machine to do the postprocessing steps.</li>
+</ol>
+<h2 id="1a.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go">1a. Creating a window into a remote linux machine from a Windows or Mac machine using X2Go<a class="anchor-link" href="#1a.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go"> </a></h2><p>To use Hamilton from a Windows or Mac machine, we can use the software package <a href="https://wiki.x2go.org">X2Go</a>. This will use the option 1, described above, i.e. all calculations and postprocessing are run on Hamilton, and your Windows machine will provide a 'window into Hamilton'.</p>
+<h3 id="X2Go-installation">X2Go installation<a class="anchor-link" href="#X2Go-installation"> </a></h3><h4 id="download-and-install-the-X2Go-software-(updated-on-20181006):">download and install the X2Go software (updated on 20181006):<a class="anchor-link" href="#download-and-install-the-X2Go-software-(updated-on-20181006):"> </a></h4><ul>
+<li>Open a web browser and go to <a href="https://wiki.x2go.org">https://wiki.x2go.org</a></li>
+<li>In the column on the left, under 'Download', click 'Getting X2Go'</li>
+<li>On a Windows computer: <ul>
+<li>Under the header 'X2Go Client', there is a box, in which you can click on 'mswin' in the Download option. This will start downloading a setup wizard called 'X2GoClient_latest_mswin32_setup.exe'</li>
+<li>Run the wizard, and answer a few installation questions: choosing the default option/setting is probably fine.</li>
+</ul>
+</li>
+<li>On a Mac: <ul>
+<li>Under the header 'X2Go Client', there is a box, in which you can click on two different DMG files in the Download option: one for OS X 10.11 and 10.12, and one for macOS 10.13 and higher. Choose the one that matches your Mac operating system, and download the file.</li>
+<li>Double-click the downloaded file, which opens an install Window. Drag the X2Go icon into the Applications folder. </li>
+<li>To allow installation and running the software, you may hae to allow installation of software that doesn't come from the App store (like this one): Open Apple (top-left) -&gt; System Preferences, then choose 'Security and Privacy'. In the 'General' tab, under 'Allow apps downloaded from:', the X2Go software should be listed, and you should be able to click a button to allow installation.</li>
+<li>Now you should be able to choose the X2Go software from your Applications 'launchpad', and run it. </li>
+</ul>
+</li>
+</ul>
+<h4 id="Configuring-X2Go">Configuring X2Go<a class="anchor-link" href="#Configuring-X2Go"> </a></h4><ul>
+<li>From the Windows Start button (bottom-left), run the newly installed 'X2Go Client'</li>
+<li>You'll probably see a blue&amp;grey 'X2Go Client' window being opened, and probably also a 'Session preferences - New session' window. If the latter doesn't open automatically, click 'Session' -&gt; 'New session ...'</li>
+<li>In the 'Session preferences - New session' window, enter the following info:<ul>
+<li>Under 'Host', enter <code>mira.dur.ac.uk</code></li>
+<li>Under 'Login:', enter your CIS username</li>
+<li>Under 'Session type', choose 'MATE'</li>
+<li>click 'OK' at the bottom of the window. Now a light-grey box should appear in the darker-grey area on the right of the 'X2Go Client' window. Your X2Go client is now set up and ready for usage.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Using-X2Go">Using X2Go<a class="anchor-link" href="#Using-X2Go"> </a></h3><ul>
+<li>If not already open, start X2Go: from the Windows Start button (bottom-left), click 'X2Go Client', which will open the blue &amp; grey window.</li>
+<li>Click the light-grey 'New session' in the dark-grey area on the left and press enter. It should now ask you for your CIS password.</li>
+<li>When running the session for the first time, it will probably warn you that the 'Host key verification failed', and asks 'Do you trust the host key?'. This is normal, and you can sefely click 'Yes'.</li>
+<li>It should now go through the connection procedure, and a new Window will open called 'New Session'. This is essentially your terminal on the 'mira' server, which should look very similar to the one you would get when logging onto a linux machine on one of the computers on the campus.</li>
+</ul>
+<h2 id="1b.-Logging-onto-Hamilton">1b. Logging onto Hamilton<a class="anchor-link" href="#1b.-Logging-onto-Hamilton"> </a></h2><p>Open a text 'terminal'. On <code>mira</code>, this can be done by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine, opening a terminal might be done in a slightly different way.</p>
+<p>From <code>mira</code>, type the following command in the terminal:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="n">hamilton</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>or from any other linux machine, type:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="o">^</span><span class="n">username</span><span class="o">^</span><span class="nd">@hamilton</span><span class="o">.</span><span class="n">dur</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(where <code>^username^</code> should be replaced with your CIS username), and provide your CIS password. (Note that the <code>-X</code> option will allow the remote machine (i.e. Hamilton) to open windows on the machine that the terminal is run from (either <code>mira</code> or your local linux machine)). You should now be logged into the Hamilton HPC cluster.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
