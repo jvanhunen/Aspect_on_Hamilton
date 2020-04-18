@@ -1,0 +1,599 @@
+---
+redirect_from:
+  - "/features/starting-with-aspect"
+interact_link: content/features/Starting_with_ASPECT.ipynb
+kernel_name: python3
+kernel_path: content/features
+has_widgets: false
+title: |-
+  Starting with ASPECT
+pagenum: 4
+prev_page:
+  url: /features/notebooks.html
+next_page:
+  url: 
+suffix: .ipynb
+search: aspect folder file calculation hamilton here should need data installation gnuplot jeroen van hunen start following running where results example community dur ac uk choose username below also calculations input name q copy useful available type different run youll executable blbacha processors job queue paraview png similar only click info once found code ddn create box line named par solution plot software guide www computer cis top into version options created html want log commands next prm case used change text control simple few refers rel hour output stored subfolder using statistics lines visualize button plots phil heron october very
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Starting with ASPECT</div>
+</div>
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/logos.png" alt=""></p>
+<h1 id="Starting-with-ASPECT">Starting with ASPECT<a class="anchor-link" href="#Starting-with-ASPECT"> </a></h1><p><strong>Jeroen van Hunen and Phil Heron October 2019</strong></p>
+<p>This document is to introduce you to the geodynamical software ASPECT and its postprocessing. The most recent copy of the very extensive and useful ASPECT user guide is available <a href="http://www.math.clemson.edu/~heister/manual.pdf">here</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Linux-and-Hamilton">Linux and Hamilton<a class="anchor-link" href="#Linux-and-Hamilton"> </a></h2><p>In computer room CG65 or similar:</p>
+<ul>
+<li>Start computer</li>
+<li>Choose 'Boot Linux from local HDD'</li>
+<li>type your CIS username and password</li>
+<li>(first time usage only) Click Accept to agree with University regulations</li>
+<li>click on the black 'terminal' screen in top task bar</li>
+<li>type the following info in the terminal window:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="n">hamilton</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and provide your CIS password. You should now be logged into the Hamilton HPC cluster. For the tasks below, you will also need a browser, and you can start Firefox from the menu on the top-left.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ASPECT-installation">ASPECT installation<a class="anchor-link" href="#ASPECT-installation"> </a></h2><p>We first need to install ASPECT. Unless there are some major upgrades throughout the year, or if you are modifying ASPECT, you should have to do this only once. Depending on the installation version, this will probably take up to a couple of hours.</p>
+<p>Here are the different options:</p>
+<ul>
+<li>Phil Heron has created an installation guide, which can be found <a href="https://philheron.com/aspect-hamilton/">here</a>. This is a full installation of everything, from the underlying <code>deal.ii</code> finite element source code to ASPECT itself.</li>
+<li>You can also start with an existing <code>deal.ii</code> installation of version 9.0.0, which significantly reduces the installation time and complexity. This is described <a href="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/ASPECT_installation.html">here</a>.</li>
+<li>Or you may simply want to use a pre-installed version of ASPECT. If so, you could use the following installation on hamilton, which was created on 10th October, 2019: \
+/ddn/data/dgl6jv1/public/aspect </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Running-calculations-on-Hamilton">Running calculations on Hamilton<a class="anchor-link" href="#Running-calculations-on-Hamilton"> </a></h2><p>The first time we are going to run a calculation, we need to create a folder from where to run the model calculations. To store the data in a location with enough capacity, we will use again the <code>/ddn/data/^username^/</code> folder (where <code>^username^</code> should be replaced with your CIS username. So log into hamilton again, and run the following commands:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^</span>
+<span class="n">mkdir</span> <span class="n">aspect</span><span class="o">-</span><span class="n">data</span>
+<span class="n">cd</span> <span class="n">aspect</span><span class="o">-</span><span class="n">data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You'll only have to do this once. So next time, you log onto hamilton, you can go straight to the data folder:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^/</span><span class="n">aspect</span><span class="o">-</span><span class="n">data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now you will need to copy over the aspect executable from the previous section to your local working folder:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^/</span><span class="n">aspect</span><span class="o">-</span><span class="n">data</span>
+<span class="n">cp</span> <span class="o">^</span><span class="n">location</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">aspect</span><span class="o">-</span><span class="n">executable</span><span class="o">^/^</span><span class="n">aspect</span><span class="o">-</span><span class="n">executable</span><span class="o">-</span><span class="n">name</span><span class="o">^</span> <span class="o">.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You'll also need to create an ASPECT input file, or copy one over to this folder. For the first ASPECT calculation, I suggest we use the following input file, called Blbach1a.prm.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dgl6jv1</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">Blbach1a</span><span class="o">.</span><span class="n">prm</span> <span class="o">.</span>
+<span class="n">nano</span> <span class="n">Blbach1a</span><span class="o">.</span><span class="n">prm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will open an <em>editor</em> in Hamilton, which, in this case, can be used to add or change text to the file <code>Blbach1a.prm</code>. Now highlight the text on the browser page, copy it (control-C), and paste it into the editor. Now save the file (control-O and then control-X).</p>
+<p>Now we have an input file for a simple convection calculation in a square unit-size box for a given Rayleigh number. The vigour of convection and resulting heat flow at the surface of the box have been calculated by many different modellers, and published in a classic paper by Blankenbach et al. (1989), and can be found <a href="https://academic.oup.com/gji/article/98/1/23/622167">here</a>. So we know rather exactly what the results of this calculation should be, and our ASPECT calculation should be able to give similar results.</p>
+<p>Next, we would like to run the calculation on Hamilton. If you've done the short course on Hamilton usage, you'll now know that you'll need a submission script. A example can be copied over and opened as follows:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dgl6jv1</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">mpi</span><span class="o">.</span><span class="n">slurm</span> <span class="o">.</span>
+<span class="n">nano</span> <span class="n">mpi</span><span class="o">.</span><span class="n">slurm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we need to make a few changes to the file. So scroll down to the end of the file. The line</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#SBATCH -n 8</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>refers to the number of processors used in the calculation. Change the number if you like. But keep in mind that the number should correspond to the number in the last line:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">8</span> <span class="o">./</span><span class="n">aspect</span><span class="o">.</span><span class="n">rel</span> <span class="err">$</span><span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this last line, the text <code>./aspect.rel</code> refers to the name of the ASPECT executable, which is, in this case, named <code>aspect.rel</code> and placed in the folder <code>.</code> (which is the folder you are presently located in). If you named your executable differently, you'll need to change it here.</p>
+<p>Finally, we need to specify the job queue in which we want to place the calculation. There are three useful queues we can use, and they are named <code>par6.q</code>, <code>par7.q</code>, and <code>test.q</code>. Which one to choose depends on the type of model: <code>par6.q</code> and <code>par7.q</code> are normally used for larger calculations lasting more than an hour (up to 72 hours). But if you have a small calculation running less than an hour, you can choose the <code>test.q</code> queue, which allows a maximum of 12 processors, and will automatically stop if the calculation lasts longer than an hour. The queue choice may also depend on how musy each of the queues is. Use</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sfree</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>to see how many processors are available in each queue. Once you are happy with the modifications of the <code>mpi.slurm</code> file, close it.</p>
+<p>Finally, we need to copy over the aspect executable to the folder where we are running the calculations. Check where your aspect executable <code>aspect.rel</code> was created (if you followed Phil's installation guide, it is probably in <code>/ddn/data/^username^/install/aspect/</code>):</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^/</span><span class="n">install</span><span class="o">/</span><span class="n">aspect</span><span class="o">/</span><span class="n">aspect</span><span class="o">.</span><span class="n">rel</span> <span class="o">.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now it is time to run the calculation, by typing the following commands:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sbatch</span> <span class="n">mpi</span><span class="o">.</span><span class="n">slurm</span> <span class="n">Blbach1a</span><span class="o">.</span><span class="n">prm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If all goes well, you will be returned a job ID number. Whether the job will start running immediately or not depends on the availability of free processors. You can find out the <em>status</em> of all your jobs in the queue by typing</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">u</span> <span class="o">^</span><span class="n">username</span><span class="o">^</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where a status <code>R</code> means the job is running, and <code>QW</code> means it is still queueing and waiting for the next available set of processors slots.</p>
+<p>Once the code starts running, it will create a folder to store the results in. The name of the folder is given in the input file. In this example, the folder name is <code>Blbach1a</code>. As you see, I named it the same as the input file, but without the <code>.prm</code> suffix, so that it is easy to match the input file name and the matching folder name. But you are essentially free to choose whatever folder name you like.</p>
+<p>The output of the code is stored in two places: a) in a file called <code>slurm-</code>^jobID^<code>.out</code>, where ^jobID^ refers to the job ID number of the calculation, and b) in the file <code>Blbach1a/log.txt</code>. So to check the output that the code is procuding while it is running, you could type:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="n">Blbach1a</span><span class="o">/</span><span class="n">log</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The results folder contains a number of other files and folders with information. For example, a subfolder with further output for visualisation using the visualisation software <em>Paraview</em> is in the subfolder <code>solution</code> (see further details on that below).</p>
+<p>Perhaps one of the more useful files is the <code>statistics</code> file, that can list several physical quantities (like maximum velocity or average temperature) for every time step of the calculation, but also a lot of more technical information, like the number of iterations needed to find the solution for that timestep. The first part of an example of the <code>statistics</code> is shown in the figure below. The first 22 lines are preceded by a <code>#</code>, and are 'header lines', that contain info on the data to follow below. It describes what data is available in each of the 22 columns below the header lines.
+<img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/screenshot_statistics_file.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualising-results">Visualising results<a class="anchor-link" href="#Visualising-results"> </a></h2><h3 id="Paraview">Paraview<a class="anchor-link" href="#Paraview"> </a></h3><p>The most useful tool to visualize results from the calculations is <code>paraview</code>. It is already installed on Hamilton, and you can use it by first loading it, and then giving the command to start it:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">paraview</span><span class="o">/</span><span class="mf">4.3</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">paraview</span><span class="o">&amp;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This should now start the graphical user interface. Paraview versions all look slightly different with different versions and on different platforms, but the basic functionality should look very similar. There are a huge number of options with this software, but here we'll just show you the basics to get a first plot produced. Extensive tutorials can be downloaded <a href="https://www.paraview.org/Wiki/The_ParaView_Tutorial">here</a>. To create a first plot, do the following:</p>
+<ul>
+<li>click on the 'Open' folder button in the top-left</li>
+<li>browse through your folders and go to the subfolder <code>solution</code> in the folder where the data for the calculation is stored (in this example <code>Blbach1a</code>)</li>
+<li>choose the file <code>solution-..pvtu</code></li>
+<li>click the blue 'Apply' button: now a grey box should appear</li>
+<li>in the drop-down box that says 'Solid Color', choose a quantity you want to visualize: I suggest to take 'T' first, to visualize the temperature field. </li>
+<li>Now press the green 'Go' button to start time-stepping through the available snapshots in time.
+You should see something similar to the plot below: 
+<img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/paraview_screenshot.png" alt="">
+There is not an awful lot to see in this case, as there are only a few time snapshots stored to file, but in future calculations, looking at the results as an 'animation' will be useful. The options for improving the plots are almost endless, and a few things to add are contours and velocity vectors.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gnuplot">Gnuplot<a class="anchor-link" href="#Gnuplot"> </a></h3><p>Simple line plots (but also much more complex and fancy plots) can be easily made with gnuplot. A basic manual and tutorial can be found <a href="https://people.duke.edu/~hpgavin/gnuplot.html">here</a>, while the main gnuplot webpage (with tutorials, download info and much more) can be found <a href="http://www.gnuplot.info/">here</a>.</p>
+<p>To get started with a simple example, type the following from the <code>/ddn/data/^username^/aspect-data</code> folder:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gnuplot</span><span class="o">/</span><span class="n">current</span>
+<span class="n">gnuplot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will produce a <code>gnuplot &gt;</code> prompt, and you can now give gnuplot commands. For example, we can plot two of the coumns of the <code>statistics</code> file discussed above:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot</span> <span class="s2">&quot;Blbach1a/statistics&quot;</span> <span class="n">using</span> <span class="mi">2</span><span class="p">:</span><span class="mi">12</span> <span class="n">title</span> <span class="s1">&#39;vrms&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You should see something like this: 
+<img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/gnuplot.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Logging-on-and-using-Hamilton-from-your-own-computer">Logging on and using Hamilton from your own computer<a class="anchor-link" href="#Logging-on-and-using-Hamilton-from-your-own-computer"> </a></h2><p>Using your own laptop or desktop to connect interact with Hamilton is described <a href="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/Hamilton_from_own_computer.html">here</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
