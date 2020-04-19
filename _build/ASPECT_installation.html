@@ -9,11 +9,11 @@ title: |-
   ASPECT installation on Hamilton
 pagenum: 1
 prev_page:
-  url: /Starting_with_ASPECT.html
-next_page:
   url: /Hamilton_from_own_computer.html
+next_page:
+  url: /Starting_with_ASPECT.html
 suffix: .ipynb
-search: aspect terminal hamilton installation using machine run jeroen van hunen linux should need command disk version community dur ac uk open os mira done black windows where username cis local following modules last check space allowance typically folder created debug release du png march text clicking screen top task bar own opening might differently mac click launchpad rocket symbol best xgo software information found here hamiltonfromowncomputer html logging onto replaced provide password note x option allow remote e either logged into hpc cluster settings loaded properly still available variables set again checked cshell bash downloading quota home data latter having
+search: aspect hamilton installation terminal version need using linux install command run deal ii computer should option following created disk machine software access here standard modify installed space yourself line typically system os jeroen van hunen models already not page own hamiltonfromowncomputer html only probably take different code pre data commands plan top still significantly found opening well cluster done remotely set open black windows where username cis local modules last check allowance folder debug release community dur ac uk du png before opened assume such please refer accessing unless major upgrades throughout year modifying once depending couple hours options planning
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -27,7 +27,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/DU.png" alt=""></p>
-<p><strong>Jeroen van Hunen, March 2020 </strong></p>
 
 </div>
 </div>
@@ -38,10 +37,61 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Open-a-text-'terminal'">Open a text 'terminal'<a class="anchor-link" href="#Open-a-text-'terminal'"> </a></h2><ul>
-<li>Linux OS: On <code>mira</code>, this can be done by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine, opening a terminal might be done differently.  </li>
+<h2 id="ASPECT-installation">ASPECT installation<a class="anchor-link" href="#ASPECT-installation"> </a></h2><p>Before we can run models with ASPECT, we first need to install the software. For this, you will need a terminal opened on Hamilton. I will assume that you have already access to such terminal. If not, please refer to the page <a href="./Hamilton_from_own_computer.html">Accessing Hamilton from your own computer</a>.</p>
+<p>Unless there are some major upgrades throughout the year, or if you are modifying ASPECT, you should have to install ASPECT only once. Depending on the installation version, this will probably take up to a couple of hours.</p>
+<p>Here are the different options:</p>
+<ul>
+<li>If you will use a standard version of ASPECT, and are not planning to modify the code, the easiest option is to use a pre-installed version of ASPECT. If so, you could use the following installation on hamilton, which was created on 10th October, 2019: <code>/ddn/data/dgl6jv1/public/aspect</code>. You can copy this over to your allocated disk space on Hamilton with the following commands:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/^</span><span class="n">username</span><span class="o">^/</span>
+<span class="n">mkdir</span> <span class="n">ASPECT</span>
+<span class="n">cd</span> <span class="n">ASPECT</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">ddn</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dgl6jv1</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">aspect</span> <span class="o">.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>If you plan to modify ASPECT, or if you want to install a non-standard version of Hamilton, you will need to install it yourself. ASPECT is built on top of a finite element software tool <code>deal.ii</code>, which is installed separately. Even if you plan to modify ASPECT, it is likely that you will still use a standard <code>deal.ii</code> version. On Hamilton, there is a <code>deal.ii</code> installation version 9.0.0, and using this pre-installed version of <code>deal.ii</code> rather than installing it yourself will significantly reduces the installation time and complexity. This approach is described further down on this page.</li>
+<li>Finally, there is the option to install everything (deal.ii and ASPECT) yourself. Phil Heron has created an installation guide for that, which can be found <a href="https://philheron.com/aspect-hamilton/">here</a>. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Opening-a-command-line-'terminal'">Opening a command line 'terminal'<a class="anchor-link" href="#Opening-a-command-line-'terminal'"> </a></h2><p>Installation of ASPECT (as well as setting up and running ASPECT models) on Durham's Linux cluster Hamilton is typically done using the command line: a text terminal with which you can navigate through the computer system, and execute commands. Since we can only access Hamilton remotely, we will need to set up this terminal facility remotely too. The way to do this will depend on the computer system you have access to.</p>
+<ul>
+<li>Linux OS: If you are using a Linux operating system, you are probably already familiar with command line terminals. If you use one of the computer room computers on the campus that has the option to boot with a linux OS, then you can open a terminal window by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine with a different linux flavour, opening a terminal might be done differently.  </li>
 <li>With Mac OS, click the 'Launchpad' (black rocket symbol), then 'Other', then 'Terminal'</li>
-<li>Using Windows, the best way is to use the <code>X2Go</code> software, and more information on this can be found <a href="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/Hamilton_from_own_computer.html">here</a>.</li>
+<li>Using Windows, the best way is to use the <code>X2Go</code> software, and more information on this can be found <a href="./Hamilton_from_own_computer.html">here</a>.</li>
 </ul>
 
 </div>
@@ -260,6 +310,17 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </div>
 </div>
 
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Jeroen van Hunen, April 2020</em></p>
+
+</div>
+</div>
 </div>
 </div>
 

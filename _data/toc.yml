@@ -22,12 +22,12 @@
 # See the links below for an example.
 
 # Top-level page
-- title: Starting with ASPECT
-  url: /Starting_with_ASPECT
+- title: Accessing Hamilton from your own computer
+  url: /Hamilton_from_own_computer
   not_numbered: true
 - title: ASPECT installation on Hamilton
   url: /ASPECT_installation
   not_numbered: true
-- title: Accessing Hamilton from your own computer
-  url: /Hamilton_from_own_computer
+- title: Starting with ASPECT
+  url: /Starting_with_ASPECT
   not_numbered: true

@@ -7,13 +7,13 @@ kernel_path: content
 has_widgets: false
 title: |-
   Starting with ASPECT
-pagenum: 0
+pagenum: 2
 prev_page:
-  url: 
-next_page:
   url: /ASPECT_installation.html
+next_page:
+  url: 
 suffix: .ipynb
-search: aspect folder file calculation hamilton here should need data installation gnuplot start following running where results example jeroen van hunen choose username below also calculations input name q community dur ac uk copy useful available type different run youll executable blbacha processors job queue paraview png similar only click info once found code ddn create box line named par solution plot software guide www computer cis top into version options created html want log commands next prm case used change text control simple few refers rel hour output stored subfolder using statistics lines visualize button plots phil heron october very
+search: aspect folder file calculation hamilton data should here need gnuplot running where results example following calculations input name q community dur ac uk jeroen van hunen copy useful available run username youll executable blbacha processors job queue choose paraview below png log html create also box different line named par start solution plot page software www into not own information ddn commands once next prm case used change text control simple found similar few refers rel type hour code output stored subfolder using statistics lines info visualize button plots very extensive user guide edu manual able please computer hamiltonfromowncomputer installed
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -27,8 +27,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/logos.png" alt=""></p>
-<p><strong>Jeroen van Hunen and Phil Heron October 2019</strong></p>
-<p>This document is to introduce the geodynamical software ASPECT and its postprocessing. The most recent copy of the very extensive and useful ASPECT user guide is available  <a href="http://www.math.clemson.edu/~heister/manual.pdf">here</a>.</p>
+<p>This page will introduce the geodynamical software ASPECT and its postprocessing. The most recent copy of the very extensive and useful ASPECT user guide is available  <a href="http://www.math.clemson.edu/~heister/manual.pdf">here</a>.</p>
 
 </div>
 </div>
@@ -39,61 +38,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linux-and-Hamilton">Linux and Hamilton<a class="anchor-link" href="#Linux-and-Hamilton"> </a></h2><p>In computer room CG65 or similar:</p>
-<ul>
-<li>Start computer</li>
-<li>Choose 'Boot Linux from local HDD'</li>
-<li>type your CIS username and password</li>
-<li>(first time usage only) Click Accept to agree with University regulations</li>
-<li>click on the black 'terminal' screen in top task bar</li>
-<li>type the following info in the terminal window:</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="n">hamilton</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>and provide your CIS password. You should now be logged into the Hamilton HPC cluster. For the tasks below, you will also need a browser, and you can start Firefox from the menu on the top-left.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ASPECT-installation">ASPECT installation<a class="anchor-link" href="#ASPECT-installation"> </a></h2><p>We first need to install ASPECT. Unless there are some major upgrades throughout the year, or if you are modifying ASPECT, you should have to do this only once. Depending on the installation version, this will probably take up to a couple of hours.</p>
-<p>Here are the different options:</p>
-<ul>
-<li>Phil Heron has created an installation guide, which can be found <a href="https://philheron.com/aspect-hamilton/">here</a>. This is a full installation of everything, from the underlying <code>deal.ii</code> finite element source code to ASPECT itself.</li>
-<li>You can also start with an existing <code>deal.ii</code> installation of version 9.0.0, which significantly reduces the installation time and complexity. This is described <a href="./ASPECT_installation.html">here</a>.</li>
-<li>Or you may simply want to use a pre-installed version of ASPECT. If so, you could use the following installation on hamilton, which was created on 10th October, 2019: \
-/ddn/data/dgl6jv1/public/aspect </li>
-</ul>
+<p>In the following I will assume that you will be able to log into Durham's Hamilton HPC cluster. If not, please refer to the page <a href="./Hamilton_from_own_computer.html">Accessing Hamilton from your own computer</a>. Furthermore, ASPECT needs to be installed already. For more information on how to install ASPECT, please see <a href="./ASPECT_installation.html">ASPECT installation</a>.</p>
 
 </div>
 </div>

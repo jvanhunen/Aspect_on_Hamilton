@@ -7,13 +7,13 @@ kernel_path: content
 has_widgets: false
 title: |-
   Accessing Hamilton from your own computer
-pagenum: 2
+pagenum: 0
 prev_page:
-  url: /ASPECT_installation.html
-next_page:
   url: 
+next_page:
+  url: /ASPECT_installation.html
 suffix: .ipynb
-search: xgo hamilton machine window linux should software click session windows open mira terminal under client mac into option run download new using installation left allow grey local postprocessing type system start probably choose enter cis log onto either calculations wiki org doesnt box preferences button bottom host username dur ac uk jeroen van hunen hpc cluster own campus not results computers package operating any b through remote e provide install header wizard called different x file downloaded applications running top able following light area password key logging done community aspect du png phil heron october page explains pc laptop whether
+search: xgo hamilton software linux machine window terminal click windows session installation run into option open should system using local mac download under client set operating allow new org left probably grey aspect postprocessing simple start os choose enter cis command line running models only remotely computer computers wiki log mira doesnt systems requires described remote e install box preferences button bottom host username logging tool opening setting typically done text package used type results calculations creating above provide header wizard called different x file downloaded applications folder top able launchpad following login light area not already password key onto campus
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -26,18 +26,37 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="http://community.dur.ac.uk/jeroen.van-hunen/ASPECT/DU.png" alt=""></p>
-<p><strong>Jeroen van Hunen and Phil Heron, October 2019</strong></p>
-<p>This page explains how to log onto and use the Hamilton HPC cluster using your own Windows, Mac, or Linux PC or laptop, whether you are on the campus or not. There are generally 2 ways to use your local machine:</p>
+<p><img src="../content/images/DU.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Opening-a-command-line-'terminal'">Opening a command line 'terminal'<a class="anchor-link" href="#Opening-a-command-line-'terminal'"> </a></h2><p>Installation of ASPECT, as well as setting up and running ASPECT models on Durham's Linux cluster Hamilton is typically done via the command line on a text terminal. Since we can only access Hamilton remotely, we will need to set up this terminal facility remotely too. The way to do this will depend on the computer operating system you are using.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are generally 2 ways to use your local machine:</p>
 <ol>
-<li>Either all the action (calculations and postprocessing) takes place remotely on Hamilton. In that case, your local machine should have some software to create a 'window into Hamilton' to type in commands for Hamilton, and to view results from postprocessing software that runs on Hamilton. <ul>
-<li>a. For Windows and Mac computers, the software package <a href="https://wiki.x2go.org">X2Go</a> can be used to log into the University's linux system <code>mira</code>. For Linux operating systems, this option is trivial, and doesn't require any additional software.</li>
-<li>b. Once you are using a linux system (either through X2Go on <code>mira</code> or directly from a Linux machine), you can then log on to Hamilton.</li>
-</ul>
+<li><p>For Windows and Mac computers, the software package <a href="https://wiki.x2go.org">X2Go</a> can be used to log into the University's linux system <code>mira</code>. Using <code>X2Go</code>, you will create a 'window into Hamilton' to type in commands for Hamilton, and to view results from postprocessing software that runs remotely on Hamilton.</p>
 </li>
-<li>Or you use a simple <em>terminal</em> to run calculations on Hamilton, and then download results from Hamilton to your local machine to do the postprocessing steps.</li>
+<li><p>Or you use a simple <em>terminal</em> to run calculations on Hamilton, and then download results from Hamilton to your local machine to do the postprocessing steps. This is straightforward and doesn't require any software installation on Linux or Mac operating systems. For Windows, it still requires some some software installation.</p>
+</li>
 </ol>
-<h2 id="1a.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go">1a. Creating a window into a remote linux machine from a Windows or Mac machine using X2Go<a class="anchor-link" href="#1a.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go"> </a></h2><p>To use Hamilton from a Windows or Mac machine, we can use the software package <a href="https://wiki.x2go.org">X2Go</a>. This will use the option 1, described above, i.e. all calculations and postprocessing are run on Hamilton, and your Windows machine will provide a 'window into Hamilton'.</p>
+<p>Both options are described in more detail below.</p>
+<h2 id="1.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go">1. Creating a window into a remote linux machine from a Windows or Mac machine using X2Go<a class="anchor-link" href="#1.-Creating-a-window-into-a-remote-linux-machine-from-a-Windows-or-Mac-machine-using-X2Go"> </a></h2><p>To use Hamilton from a Windows or Mac machine, we can use the software package <a href="https://wiki.x2go.org">X2Go</a>. This will use the option 1, described above, i.e. all calculations and postprocessing are run on Hamilton, and your Windows machine will provide a 'window into Hamilton'.</p>
 <h3 id="X2Go-installation">X2Go installation<a class="anchor-link" href="#X2Go-installation"> </a></h3><h4 id="download-and-install-the-X2Go-software-(updated-on-20181006):">download and install the X2Go software (updated on 20181006):<a class="anchor-link" href="#download-and-install-the-X2Go-software-(updated-on-20181006):"> </a></h4><ul>
 <li>Open a web browser and go to <a href="https://wiki.x2go.org">https://wiki.x2go.org</a></li>
 <li>In the column on the left, under 'Download', click 'Getting X2Go'</li>
@@ -71,36 +90,12 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <li>When running the session for the first time, it will probably warn you that the 'Host key verification failed', and asks 'Do you trust the host key?'. This is normal, and you can sefely click 'Yes'.</li>
 <li>It should now go through the connection procedure, and a new Window will open called 'New Session'. This is essentially your terminal on the 'mira' server, which should look very similar to the one you would get when logging onto a linux machine on one of the computers on the campus.</li>
 </ul>
-<h2 id="1b.-Logging-onto-Hamilton">1b. Logging onto Hamilton<a class="anchor-link" href="#1b.-Logging-onto-Hamilton"> </a></h2><p>Open a text 'terminal'. On <code>mira</code>, this can be done by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine, opening a terminal might be done in a slightly different way.</p>
-<p>From <code>mira</code>, type the following command in the terminal:</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="n">hamilton</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>or from any other linux machine, type:</p>
+<h2 id="2.-Logging-onto-Hamilton-using-a-simple-terminal">2. Logging onto Hamilton using a simple terminal<a class="anchor-link" href="#2.-Logging-onto-Hamilton-using-a-simple-terminal"> </a></h2><p>If we are logging into Hamilton to install ASPECT, or to set up and run models, but do all postprocessing and visualisation on your local machine, then a simple terminal is sufficient to set up. Depending on the operating system of your local machine, this can be one in the following way.</p>
+<ul>
+<li>Linux OS: If you are using a Linux operating system, you are probably already familiar with command line terminals. If you use one of the computer room computers on the campus that has the option to boot with a linux OS, then you can open a terminal window by clicking on the black 'terminal' screen in top task bar, but if you are using your own linux machine with a different linux flavour, opening a terminal might be done differently.  </li>
+<li>With Mac OS, click the 'Launchpad' (black rocket symbol), then 'Other', then 'Terminal'</li>
+</ul>
+<p>Once you have a terminal set up, you can directly log into Hamilton:</p>
 
 </div>
 </div>
@@ -128,7 +123,20 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(where <code>^username^</code> should be replaced with your CIS username), and provide your CIS password. (Note that the <code>-X</code> option will allow the remote machine (i.e. Hamilton) to open windows on the machine that the terminal is run from (either <code>mira</code> or your local linux machine)). You should now be logged into the Hamilton HPC cluster.</p>
+<p>(where <code>^username^</code> should be replaced with your CIS username), and provide your CIS password. (Note that the <code>-X</code> option will allow the remote machine (i.e. Hamilton) to open windows on your local machine. This option typically works on Linux systems, but on Linux systems, it requires installation of extra software.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>MS Windows does not run a linux operating system, so creating a remote login is the only option. However, an alternative to <code>X2Go</code> described above the software is to use a simple software tool <a href="https://www.putty.org/"><code>putty</code></a> to log into Hamilton. This tool is only text-based, and cannot be used to run software from Hamilton that requires a window (e.g. Paraview). But it does allow you to set up and run models with ASPECT. Simply download an executable and put it in your local desktop folder. To transfer data from Hamilton to your local machine (or the other way around), <a href="https://filezilla-project.org/">Filezilla</a> is a easy to use software tool. </li>
+</ul>
 
 </div>
 </div>
