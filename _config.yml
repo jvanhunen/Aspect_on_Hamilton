@@ -19,10 +19,9 @@
 title: ASPECT on Hamilton
 author: Jeroen van Hunen
 email:
-description: >-
-  
+description: 
 
-baseurl: /  # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+baseurl: ""  # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: YOUR URL                  # the base hostname & protocol for your site, e.g. http://example.com
 
 
@@ -38,7 +37,7 @@ collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in
 collapse_inactive_sections: true  # Whether to collapse the sub-sections within a non-active section in the sidebar
 textbook_logo: content/images/DU.png   # A logo to be displayed at the top of your textbook sidebar. Should be square
 textbook_logo_link: https://www.dur.ac.uk/    # A link for the logo.
-sidebar_footer_text: Jeroen van Hunen, April 2020 \\ 
+sidebar_footer_text: Created by Jeroen van Hunen, April 2020 \\ 
                      Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 number_toc_chapters: true         # Whether to add numbers to chapterse in your Table of Contents. If true, you can control this at the Chapter level in _data/toc.yml
 
