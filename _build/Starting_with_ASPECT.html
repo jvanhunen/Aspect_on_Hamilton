@@ -13,7 +13,7 @@ prev_page:
 next_page:
   url: 
 suffix: .ipynb
-search: aspect data folder file calculation hamilton username blbacha gnuplot ddn should here need running where executable name results example paraview following calculations input prm q copy useful available log run youll slurm processors rel job queue choose below plot images png html create cd cp also box different mpi line named par start using solution statistics page software www into not own information install commands once next case used change text control simple found similar few refers type hour code output stored subfolder lines info visualize button plots very extensive user guide edu manual able please computer hamiltonfromowncomputer installed already
+search: aspect data file folder hamilton calculation paraview need username blbacha gnuplot ddn should here running where executable name results example available following install calculations run input prm q copy useful www log own youll slurm processors rel job queue choose solution below plot images png not html installation create cd local cp also text simple box different mpi line named par start using statistics machine org page software into information commands once next open case used change control found similar few refers type hour well code output stored files subfolder lines info tool visualize systems windows versions button plots very
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -21,8 +21,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
     <main class="jupyter-page">
     <div id="page-info"><div id="page-title">Starting with ASPECT</div>
 </div>
-    
-<div class="jb_cell">
+    <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -349,7 +348,8 @@ nano mpi.slurm</code></pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Visualising-results">Visualising results<a class="anchor-link" href="#Visualising-results"> </a></h2><h3 id="Paraview">Paraview<a class="anchor-link" href="#Paraview"> </a></h3><p>The most useful tool to visualize results from the calculations is <code>paraview</code>. It is already installed on Hamilton, and you can use it by first loading it, and then giving the command to start it:</p>
+<h2 id="Visualising-results">Visualising results<a class="anchor-link" href="#Visualising-results"> </a></h2><h3 id="Paraview">Paraview<a class="anchor-link" href="#Paraview"> </a></h3><p>The most useful tool to visualize results from the calculations is <code>paraview</code>. You can run it remotely, on Hamilton or install it locally on your own machine.</p>
+<p>Running it remotely has the advantage that you don't need to transfer any data from Hamilton to your local machine, but the disadvantage is that you need a way to display a remote Paraview window (from Hamilton) on the screen of your local machine. This option probably works well if you work with <code>X2Go</code>. It is already installed on Hamilton, and you can use it by first loading it, and then giving the command to start it:</p>
 
 </div>
 </div>
@@ -373,7 +373,18 @@ paraview&amp;</code></pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This should now start the graphical user interface. Paraview versions all look slightly different with different versions and on different platforms, but the basic functionality should look very similar. There are a huge number of options with this software, but here we'll just show you the basics to get a first plot produced. Extensive tutorials can be downloaded <a href="https://www.paraview.org/Wiki/The_ParaView_Tutorial">here</a>. To create a first plot, do the following:</p>
+<p>Alternatively, you install it locally on your own machine. This might be the best solution if you don't use X2Go, but, e.g. a simple text-based ssh tool such as Putty (<code>www.putty.org</code>), in combination with a file transfer tool such as FileZilla (<code>https://filezilla-project.org/</code>). Local Paraview installation is pretty straghtforward on most operating systems, including Windows, Linux, and MacOS, as executables or install files are available from <code>https://www.paraview.org/download/</code>. But particularly on Windows systems, not all versions work without error. It seems that (the older) version 5.7.0 runs okay on most Windows10 systems, so if you encounter problems, perhaps try this version.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After installation, start Paraview: it should open a Graphical User Interface. Paraview versions all look slightly different with different versions and on different platforms, but the basic functionality should look very similar. There are a huge number of options with this software, but here we'll just show you the basics to get a first plot produced. Extensive tutorials can be downloaded <a href="https://www.paraview.org/Wiki/The_ParaView_Tutorial">here</a>. To create a first plot, do the following:</p>
 <ul>
 <li>click on the 'Open' folder button in the top-left</li>
 <li>browse through your folders and go to the subfolder <code>solution</code> in the folder where the data for the calculation is stored (in this example <code>Blbach1a</code>)</li>
